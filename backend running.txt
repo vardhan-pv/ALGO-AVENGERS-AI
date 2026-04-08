@@ -1,0 +1,28 @@
+venv\Scripts\activate
+pip install -r requirements.txt
+backend running
+uvicorn main:app --reload --port 8000
+
+http://127.0.0.1:8000/docs
+
+frontend
+python -m http.server 5500
+http://127.0.0.1:5500
+
+n8n
+grock:pvvardhanredy28@gmail.com
+
+$body = @{
+>>   action = "closed"
+>>   pull_request = @{
+>>     merged = $true
+>>     title = "Test PR for PharmacyGo"
+>>     user = @{login = "vardhan-pv"}
+>>   }
+>>   repository = @{full_name = "vardhan-pv/pharmacygo"}
+>>   sender = @{login = "vardhan-pv"}
+>> } | ConvertTo-Json
+>>
+>> Invoke-WebRequest -Method POST -Uri "https://vardhanreddypv.app.n8n.cloud/webhook-test/reposense-webhook" -ContentType "application/json" -Body $body
+
+vardhanreddypv100281@gmail.com --->>>n8n
